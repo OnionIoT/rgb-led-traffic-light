@@ -15,8 +15,8 @@ cd /root
 git clone https://github.com/OnionIoT/rgb-led-traffic-light.git
 mkdir /www/traffic
 mkdir /www/cgi-bin
-cp rgb-led-traffic-light/www/index.html 
-cp rgb-led-traffic-light/cgi-bin/* /www/cgi-bin/
+cp rgb-led-traffic-light/www/index.html /www/traffic/
+cp rgb-led-traffic-light/www/cgi-bin/* /www/cgi-bin/
 ```
 
 ## Usage
