@@ -13,7 +13,10 @@ Connect to your Omega's command line. Then run:
 ```
 cd /root
 git clone https://github.com/OnionIoT/rgb-led-traffic-light.git
-cp -r rgb-led-traffic-light/www /www/traffic
+mkdir /www/traffic
+mkdir /www/cgi-bin
+cp rgb-led-traffic-light/www/index.html 
+cp rgb-led-traffic-light/cgi-bin/* /www/cgi-bin/
 ```
 
 ## Usage
