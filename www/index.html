@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Sample traffic light" />
+        <meta name="author" content="Onion Corporation" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <title>Omega Traffic Light</title>
+        <style>
+         html, body {
+             height: 100%;
+             width: 100%;
+             margin: 0;
+             padding: 0;
+         }
+
+         * {
+             -webkit-box-sizing: border-box;
+             -moz-box-sizing: border-box;
+             box-sizing: border-box;
+             font-family: sans-serif;
+             -webkit-touch-callout: none;
+             -webkit-user-select: none;
+             -khtml-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+         }
+
+         .button {
+             height: 150px;
+             width: 150px;
+             font-weight: bold;
+             margin: auto;
+             margin-top: 30px;
+             padding: 25px;
+             border-radius: 50%;
+             text-align: center;
+             
+         }
+
+         .text-center {
+             text-align: center;
+         }
+
+         .instruction {
+             text-align: center;
+             color: #00c;
+         }
+
+         .big {
+             font-weight: 400;
+             font-size: 24pt;
+         }
+
+         .small {
+             font-size: 9pt;
+         }
+
+         #control {
+             height: 100%;
+         }
+         #timer {
+             position: absolute;
+             bottom: 0;
+             width: 100%;
+             background: #ff0;
+         }
+         
+         #btnRed {
+             background-color: #ff4444;
+             /*border: 1px solid #ff4444;*/
+         }
+         
+         #btnRed:active {
+             background-color: #CC0000;
+         }
+         
+         #btnAmber {
+             background-color: #ffbb33;
+             /*border: 1px solid #ffbb33;*/
+         }
+         #btnAmber:active {
+             background-color: #FF8800;
+         }
+         
+         #btnGreen {
+             background-color: #00C851;
+             /*border: 1px solid #00C851;*/
+         }
+         #btnGreen:active {
+             background-color: #007E33;
+         }
+
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center">Omega Traffic Light</h1>
+        <div class="text-center">
+            Click on the buttons below to set the color on the Expansion Dock's RGB LED!
+        </div>
+
+        <div class="wrapper">
+            <div class="padding-container-15 onion-content">
+                <div id="control">
+                    <div id="btnRed" onclick="setLight('red')" class="button text-center">
+                        <!-- <div class="big">Red</div> -->
+                    </div>
+
+                    <div id="btnAmber" onclick="setLight('amber')" class="button text-center">
+                        <!-- <div class="big">Open</div> -->
+                    </div>
+
+                    <div id="btnGreen" onclick="setLight('green')" class="button text-center">
+                        <!-- <div class="big">Close</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+	      <script>
+         function setLight(state) {
+             url = '/cgi-bin/' + state;
+					   if(window.XMLHttpRequest)
+						     request = new XMLHttpRequest();
+					   else
+						     request = new ActiveXObject("Microsoft.XMLHTTP");
+					   request.open('GET', url, false);
+					   request.send();
+         };
+        </script>
+    </body>
+</html>

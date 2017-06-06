@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "Content-type: application/json"
+echo ""
+echo '{"success":"ok"}'
+
+/www/cgi-bin/rgb.sh 993400 &
+
+exit 0
